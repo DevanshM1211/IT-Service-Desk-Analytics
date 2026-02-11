@@ -1,0 +1,5 @@
+Month,tickets_created,avg_resolution_hours,breached_tickets,high_priority_tickets,breach_rate_percent,high_priority_percent
+2025-04-01,516,57.61,134,158,25.97,30.62
+2025-05-01,471,56.93,133,148,28.24,31.42
+2025-06-01,504,60.47,139,142,27.58,28.17
+2025-07-01,509,56.55,148,165,29.08,32.42

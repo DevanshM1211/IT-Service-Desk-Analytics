@@ -1,0 +1,5 @@
+Priority,ticket_count,percentage,avg_resolution_hours,sla_target_hours,breached_tickets,breach_rate_percent
+Critical,210,10.5,3.03,4,69,32.86
+High,403,20.15,17.89,24,92,22.83
+Medium,795,39.75,61.87,72,254,31.95
+Low,592,29.6,99.27,120,139,23.48
