@@ -92,9 +92,13 @@ def fill_missing_values(df: pd.DataFrame, strategy: str = "mean",
     target_cols = columns if columns else df_copy.columns
     
     if strategy == "mean":
-        df_copy[target_cols] = df_copy[target_cols].fillna(df_copy[target_cols].mean())
+        numeric_cols = df_copy[target_cols].select_dtypes(include=[np.number]).columns
+        if len(numeric_cols) > 0:
+            df_copy[numeric_cols] = df_copy[numeric_cols].fillna(df_copy[numeric_cols].mean())
     elif strategy == "median":
-        df_copy[target_cols] = df_copy[target_cols].fillna(df_copy[target_cols].median())
+        numeric_cols = df_copy[target_cols].select_dtypes(include=[np.number]).columns
+        if len(numeric_cols) > 0:
+            df_copy[numeric_cols] = df_copy[numeric_cols].fillna(df_copy[numeric_cols].median())
     elif strategy == "forward_fill":
         df_copy[target_cols] = df_copy[target_cols].fillna(method='ffill')
     elif strategy == "backward_fill":

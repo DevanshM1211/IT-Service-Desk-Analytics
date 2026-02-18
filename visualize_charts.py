@@ -219,15 +219,12 @@ class ServiceDeskChartGenerator:
                     fontsize=13, fontweight='bold', pad=20)
         
         # Add value labels on bars showing count and percentage
-        for bar in bars:
+        for bar, (_, row) in zip(bars, df.iterrows()):
             height = bar.get_height()
-            # Find percentage for this bar
-            pct_data = df[df['Priority'] == bar.get_x() + bar.get_width()/2]
-            if len(pct_data) > 0:
-                pct = pct_data['percentage'].values[0]
-                ax.text(bar.get_x() + bar.get_width()/2., height,
-                       f'{int(height)}\n({pct:.1f}%)', ha='center', va='bottom',
-                       fontsize=10, fontweight='bold')
+            pct = row['percentage']
+            ax.text(bar.get_x() + bar.get_width()/2., height,
+                   f'{int(height)}\n({pct:.1f}%)', ha='center', va='bottom',
+                   fontsize=10, fontweight='bold')
         
         # Set y-axis limit with padding
         ax.set_ylim(0, max(df['ticket_count']) * 1.15)

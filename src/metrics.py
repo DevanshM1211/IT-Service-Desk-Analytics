@@ -43,7 +43,7 @@ def calculate_sla_compliance(df: pd.DataFrame, resolved_col: str,
     resolved_tickets = df[df[resolved_col] == True]
     if len(resolved_tickets) == 0:
         return 0.0
-    complaint_rate = (resolved_tickets[sla_col].sum() / len(resolved_tickets)) * 100
+    compliance_rate = (resolved_tickets[sla_col].sum() / len(resolved_tickets)) * 100
     return compliance_rate
 
 

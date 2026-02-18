@@ -420,5 +420,5 @@ if __name__ == "__main__":
     print("  • ticket_volume_trend.csv")
     print("\nNext steps:")
     print("  1. Review the CSV files in outputs/")
-    print("  2. Create visualizations: python visualize_analytics.py")
+    print("  2. Create visualizations: python visualize_charts.py")
     print("  3. Build interactive dashboard: jupyter notebook")
