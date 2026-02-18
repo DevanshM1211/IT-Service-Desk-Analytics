@@ -63,6 +63,9 @@ Thumbs.db
 .env
 .env.local
 
+# Vercel
+.vercel/
+
 # Logs
 *.log
 logs/
